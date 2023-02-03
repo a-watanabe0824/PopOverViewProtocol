@@ -1,4 +1,5 @@
-# PopOverViewProtocol
+# PopOverView (Protocol)
+
 
 ```
 import Foundation
@@ -108,4 +109,12 @@ extension PopoverViewdelegate{
     }
 }
 
+```
+
+ 表示したviewcontrollerに以下のようなprotocolを準拠させておくと値渡しが楽になる。
+
+```
+protocol PopoverOutput : AnyObject{
+  func output()
+}
 ```
