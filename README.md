@@ -8,7 +8,7 @@ import UIKit
 //popoverを出すためのプロトコル。位置や矢印の方向は実装画面ごと、実装位置ごとに違うためpopを表示するViewController側で指定する。
 
 
-protocol  PopoverViewdelegate where Self: UIViewController {
+protocol  PopoverViewDelegate where Self: UIViewController {
     
     //Popoverを呼び出す関数
     func Show_Popoverview(ViewVC:UIViewController, animated: Bool, completion: (() -> ())?)
@@ -33,7 +33,7 @@ protocol  PopoverViewdelegate where Self: UIViewController {
     func viewframePoint(_ point:Int)
 }
 
-extension PopoverViewdelegate{
+extension PopoverViewDelegate{
     //調整しない時はこのextensionとプロトコルの関数ごと消す。
     func rightframePoint(_ SelectViewframe:CGRect) -> CGRect{
         
@@ -54,7 +54,7 @@ extension PopoverViewdelegate{
 }
 
 //where Self: UIViewControllerで限定することで遷移の処理を書くことができる。
-extension PopoverViewdelegate{
+extension PopoverViewDelegate{
     
     func Show_Popoverview(ViewVC:UIViewController, animated: Bool, completion: (() -> ())?){
     
